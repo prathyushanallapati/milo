@@ -10,11 +10,14 @@ export const loadRequiredScript = (el) => {
 		const id = urlParams[urlParams.length - 1];
 
 		if (component === 'webgl') {
+			const wrapperElement = document.createElement('div');
+			wrapperElement.classList.add('maverick-block');
+			el.parentNode.insertBefore(wrapperElement, el.nextSibling);
 			const canvasElement = document.createElement('canvas');
 			canvasElement.width = window.innerWidth;
 			canvasElement.height = window.innerHeight;
-			canvasElement.classList.add('canvas-elment');
-			el.parentNode.insertBefore(canvasElement, el.nextSibling);
+			canvasElement.classList.add('maverick-canvas');
+			wrapperElement.appendChild(canvasElement);
 			Maverick.loadMaverickComponent(component, id, `class:${canvasElement.getAttribute('class')}`);
 		}
 
