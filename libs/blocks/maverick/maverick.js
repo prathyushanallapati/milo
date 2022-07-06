@@ -23,7 +23,7 @@ export const loadRequiredScript = (el) => {
 
 		if (component === 'button') {
 			const element = document.createElement('button');
-			button.classList.add('maverick-button');
+			element.classList.add('maverick-button');
 			Maverick.loadMaverickComponent(component, id, `class:${element.getAttribute('class')}`);
 		}
 		
