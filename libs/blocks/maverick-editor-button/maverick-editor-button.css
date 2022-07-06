@@ -1,0 +1,19 @@
+.maverick-editor-button {
+	width: 100%;
+}
+
+.maverick-editor-button form {
+	margin: 0 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+.maverick-editor-button input[type="text"],
+select {
+	width: 200px;
+	padding: 5px;
+	border-radius: 4px;
+	border:  1px solid #000;
+	min-height:  40px;
+}

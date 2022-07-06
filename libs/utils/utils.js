@@ -7,6 +7,7 @@ const AUTO_BLOCKS = [
   { caas: '/tools/caas' },
   { faas: '/tools/faas' },
   { fragment: '/fragments/' },
+  { maverick: 'http://maverickk.corp.adobe.com'},
 ];
 
 export function getEnv() {

@@ -1,0 +1,33 @@
+import { loadScript } from '../../utils/utils.js';
+
+export const loadRequiredScript = (el) => {
+	return Promise.all([
+		loadScript('http://maverickk.corp.adobe.com/maverick.js'),
+	]).then(() => {
+		const maverickUrl = el.textContent;
+		const urlParams = maverickUrl.split('/');
+		const component = urlParams[urlParams.length - 2];
+		const id = urlParams[urlParams.length - 1];
+
+		if (component === 'webgl') {
+			const canvasElement = document.createElement('canvas');
+			canvasElement.width = window.innerWidth;
+			canvasElement.height = window.innerHeight;
+			canvasElement.classList.add('canvas-elment');
+			el.parentNode.insertBefore(canvasElement, el.nextSibling);
+			Maverick.loadMaverickComponent(component, id, `class:${canvasElement.getAttribute('class')}`);
+		}
+
+		if (component === 'button') {
+			const element = document.createElement('button');
+			button.classList.add('maverick-button');
+			Maverick.loadMaverickComponent(component, id, `class:${element.getAttribute('class')}`);
+		}
+		
+		el.remove();
+	});
+};
+
+export default function init(el) {
+	loadRequiredScript(el);
+}
