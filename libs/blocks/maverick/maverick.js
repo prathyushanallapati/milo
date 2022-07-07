@@ -2,7 +2,7 @@ import { loadScript } from '../../utils/utils.js';
 
 export const loadRequiredScript = (el) => {
 	return Promise.all([
-		loadScript('http://maverickk.corp.adobe.com/maverick.js'),
+		loadScript('http://maverickk.corp.adobe.com/cmp/maverick.js'),
 	]).then(() => {
 		const maverickUrl = el.textContent;
 		const urlParams = maverickUrl.split('/');
